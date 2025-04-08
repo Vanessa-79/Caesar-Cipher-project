@@ -22,13 +22,12 @@ def caesar_cipher(text, shift)
       # Convert to number, apply shift, wrap around, and convert back to char
       shifted = ((char.ord - base + shift) % 26 + base).chr
       result += shifted
-      
+
     elsif char.match(/[a-z]/)  # Check if it's lowercase
       base = 'a'.ord
       shifted = ((char.ord - base + shift) % 26 + base).chr
       result += shifted
     else
-      # If it's not a letter (e.g., space or punctuation), leave it as is
       result += char
     end
   end
